@@ -2,134 +2,236 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>SCPES Membership Form </title>
+	<title>SCPES Membership Form</title>
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<!-- Font-->
-	<link rel="stylesheet" type="text/css" href="css/montserrat-font.css">
+	<link rel="stylesheet" type="text/css" href="css/raleway-font.css">
 	<link rel="stylesheet" type="text/css" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+	<!-- Jquery -->
+	<link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
 	<!-- Main Style Css -->
     <link rel="stylesheet" href="css/style.css"/>
-</head>
-<body class="form-v10">
 	
-	<div class="page-content">
-		<div class="form-v10-content">
-			<form class="form-detail" action="#" method="post" id="myform">
-				<div class="form-left">
-					<center><h2>SCPES MEMBERSHIP FORM</h2></center>
-					<h2>General Infomation</h2>
-					<div class="form-group">
-						<div class="form-row form-row-1">
-							<input type="text" name="first_name" id="first_name" class="input-text" placeholder="First Name" required>
-						</div>
-						<div class="form-row form-row-2">
-							<input type="text" name="last_name" id="last_name" class="input-text" placeholder="Last Name" required>
-						</div>
-					</div>
-					<div class="form-row">
-						<input type="text" name="street" class="street" id="street" placeholder="Student Number" required>
-					</div>
-					<div class="form-row">
-						<select name="Current Year Level">
-						    <option value="Current Year Level">Current Year Level</option>
-						    <option value="1">1</option>
-						    <option value="2">2</option>
-						    <option value="3">3</option>
-							<option value="1">4</option>
-						</select>
-						<span class="select-btn">
-						  	<i class="zmdi zmdi-chevron-down"></i>
-						</span>
-					</div>
-					<div class="form-row">
-						<select name="Program">
-						    <option value="Program">Program</option>
-						    <option value="BS Computer Engineering">BS Computer Engineering</option>
-						    <option value="Others">Others</option>
-						</select>
-						<span class="select-btn">
-						  	<i class="zmdi zmdi-chevron-down"></i>
-						</span>
-					</div>
-					<div class="form-row">
-						<input type="text" name="company" class="company" id="company" placeholder="Company" required>
-					</div>
-					<div class="form-group">
-						<div class="form-row form-row-3">
-							<input type="text" name="business" class="business" id="business" placeholder="Business Arena" required>
-						</div>
-						<div class="form-row form-row-4">
-							<select name="employees">
-							    <option value="employees">Employees</option>
-							    <option value="trainee">Trainee</option>
-							    <option value="colleague">Colleague</option>
-							    <option value="associate">Associate</option>
-							</select>
-							<span class="select-btn">
-							  	<i class="zmdi zmdi-chevron-down"></i>
-							</span>
-						</div>
-					</div>
-				</div>
-				<div class="form-right">
-					<h2>Contact Details</h2>
-					<div class="form-row">
-						<input type="text" name="street" class="street" id="street" placeholder="Street + Nr" required>
-					</div>
-					<div class="form-row">
-						<input type="text" name="additional" class="additional" id="additional" placeholder="Additional Information" required>
-					</div>
-					<div class="form-group">
-						<div class="form-row form-row-1">
-							<input type="text" name="zip" class="zip" id="zip" placeholder="Zip Code" required>
-						</div>
-						<div class="form-row form-row-2">
-							<select name="place">
-							    <option value="place">Place</option>
-							    <option value="Street">Street</option>
-							    <option value="District">District</option>
-							    <option value="City">City</option>
-							</select>
-							<span class="select-btn">
-							  	<i class="zmdi zmdi-chevron-down"></i>
-							</span>
-						</div>
-					</div>
-					<div class="form-row">
-						<select name="country">
-						    <option value="country">Country</option>
-						    <option value="Vietnam">Vietnam</option>
-						    <option value="Malaysia">Malaysia</option>
-						    <option value="India">India</option>
-						</select>
-						<span class="select-btn">
-						  	<i class="zmdi zmdi-chevron-down"></i>
-						</span>
-					</div>
-					<div class="form-group">
-						<div class="form-row form-row-1">
-							<input type="text" name="code" class="code" id="code" placeholder="Code +" required>
-						</div>
-						<div class="form-row form-row-2">
-							<input type="text" name="phone" class="phone" id="phone" placeholder="Phone Number" required>
-						</div>
-					</div>
-					<div class="form-row">
-						<input type="text" name="your_email" id="your_email" class="input-text" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}" placeholder="Your Email">
-					</div>
-					<div class="form-checkbox">
-						<label class="container"><p>I do accept the <a href="#" class="text">Terms and Conditions</a> of your site.</p>
-						  	<input type="checkbox" name="checkbox">
-						  	<span class="checkmark"></span>
-						</label>
-					</div>
-					<div class="form-row-last">
-						<input type="submit" name="register" class="register" value="Register Badge">
-					</div>
-				</div>
-			</form>
+</head>
+<body>
+	
+	<div class="page-content" style="background-image: url('images/wizard-v1.png')">
+		<div class="wizard-v1-content">
+			<div class="wizard-form">
+		        <form class="form-register" id="form-register" action="#" method="post">
+		        	<div id="form-total">
+						
+		        		<!-- SECTION 1 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-accoun"></i></span>
+			            	<span class="step-number">Step 1</span>
+			            	<span class="step-text">Personal Information</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="firstname">First Name*</label>
+										<input type="text" placeholder="First Name" class="form-control" id="firstname" name="Firstname" required>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="middlename">Middle Name</label>
+										<input type="text" placeholder="Middle Name" class="form-control" id="middlename" name="Middlename">
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="lastname">Last Name*</label>
+										<input type="text" placeholder="Last Name" class="form-control" id="lastname" name="lastname" required>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="student-number">Student Number*</label>
+										<input type="text" placeholder="Student Number" class="form-control" id="student-number" name="student-number" required pattern="[0-9]{11}">
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="year-level">Current Year Level*</label>
+										<input type="text" placeholder="Year Level" class="form-control" id="year-level" name="year-level" required pattern="[1-4]{1}">
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="program">Program*</label>
+										<select name="program" id="program" class="form-control" required>
+											<option value="" disabled selected>Select Program</option>
+											<option value="BS Computer Engineering">BS Computer Engineering</option>
+											<option value="Other Programs">Other Programs</option>
+										</select>
+									</div>
+								</div>
+							</div>
+			            </section>
+						<!-- SECTION 2 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-accoun"></i></span>
+			            	<span class="step-number">Step 2</span>
+			            	<span class="step-text">Contact Information</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="ue-email">UE Email*</label>
+										<input type="text" placeholder="UE Email" class="form-control" id="ue-email" name="ue-email" required pattern=".+@ue.edu.ph">
+									</div>
+								</div>
+								<div class="inner">
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="personal-email">Personal Email*</label>
+											<input type="text" placeholder="Personal Email" class="form-control" id="personal-email" name="personal-email" required pattern="[^@]+@[^@]+.[a-zA-Z]{2,6}">
+										</div>
+									</div>
+									<div class="inner">
+										<div class="form-row">
+											<div class="form-holder form-holder-2">
+												<label for="contact-number">Contact Number*</label>
+												<input type="text" placeholder="09xxxxxxxxx" class="form-control" id="contact-number" name="contact-number" required pattern="[0]+[9]+[0-9]{9}">
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-holder form-holder-2">
+												<label for="home-address">Home Address*</label>
+												<input type="text" placeholder="Home Address" class="form-control" id="home-address" name="home-address" required>
+											</div>
+										</div>
+										<div class="form-row">
+											<div class="form-holder form-holder-2">
+												<label for="provincial-address">Provincial Address</label>
+												<input type="text" placeholder="Provincial Address" class="form-control" id="provincial-address" name="home-address">
+											</div>
+										</div>
+							</div>
+			            </section>
+						<!-- SECTION 3 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-ca"></i></span>
+			            	<span class="step-number">Step 3</span>
+			            	<span class="step-text">Social Media Accounts</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="facebook">Facebook*</label>
+										<input type="text" placeholder="username" class="form-control" id="Facebook" name="Facebook" required pattern="[@]+[a-zA-Z]{2,6}">
+									</div>
+								</div>
+								<div class="inner">
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="instagram">Instagram*</label>
+											<input type="text" placeholder="username" class="form-control" id="Instagram" name="Instagram" required pattern="[@]+[a-zA-Z]{2,6}">
+										</div>
+									</div>
+									<div class="inner">
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="twitter">Twitter*</label>
+										<input type="text" placeholder="username" class="form-control" id="Instagram" name="Instagram" required pattern="[@]+[a-zA-Z]{2,6}">
+									</div>
+								</div>
+								
+							</div>
+			            </section>
+						<!-- SECTION 4 -->
+			            <h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-ca"></i></span>
+			            	<span class="step-number">Step 4</span>
+			            	<span class="step-text">Emergency Contact Information</span>
+			            </h2>
+			            <section>
+			                <div class="inner">
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="full-name">Full Name*</label>
+										<input type="text" placeholder="Full name" class="form-control" id="full-name" name="full-name" required>
+									</div>
+								</div>
+								<div class="inner">
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="relationship">Relationship*</label>
+											<input type="text" placeholder="Relationship" class="form-control" id="relationship" name="relationshipe" required>
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="contact-number">Contact Number*</label>
+											<input type="text" placeholder="09xxxxxxxxx" class="form-control" id="contact-number" name="contact-number" required pattern="[0]+[9]+[0-9]{9}">
+										</div>
+									</div>
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="lastname">Home Address*</label>
+											<input type="text" placeholder="Home Address" class="form-control" id="home-address" name="home-address" required>
+										</div>
+									</div>
+							</div>
+			            </section>
+
+			            <!-- SECTION 5 -->
+						<h2>
+			            	<span class="step-icon"><i class="zmdi zmdi-accoun"></i></span>
+			            	<span class="step-number">Step 5</span>
+			            	<span class="step-text">Membership Type</span>
+			            </h2>
+			            <section>
+							<div class="inner">
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="payment">Mode of Payment*</label>
+										<input type="text" placeholder="Mode of Payment" class="form-control" id="payment" name="payment" required>
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-holder form-holder-2">
+										<label for="membership">Membership Type*</label>
+										<select name="membership" id="membership" class="form-control" required>
+											<option value="" disabled selected>Select Program</option>
+											<option value="New">New</option>
+											<option value="Renew">Renew</option>
+											<option value="Honorary">Honorary</option>
+										</select>
+									</div>
+								</div>
+								<div class="inner">
+									<div class="form-row">
+										<div class="form-holder form-holder-2">
+											<label for="file">Upload Proof of Payment</label>
+											<input type="file" name="file" id="file" class="myclass" />
+										</div>
+									</div>
+								<label>
+									<input type="checkbox" checked>I agree to all statement in Terms & Conditions
+									<span class="checkmark"></span>
+								</label>
+							</div>
+			            </section>
+
+			            
+
+
+		        	</div>
+		        </form>
+			</div>
 		</div>
 	</div>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+	<script src="js/jquery.steps.js"></script>
+	<script src="js/main.js"></script>
+</body>
 </html>
